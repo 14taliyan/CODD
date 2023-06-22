@@ -1,0 +1,14 @@
+replicaCount: 1
+
+image:
+  repository: "please enter repository:"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 1003
+  targetport: 5000
+  name: my-aks-charts
+
+container:
+  name: my-aks-charts
