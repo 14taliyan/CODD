@@ -15,7 +15,7 @@ RUN pip3 install -r requirements.txt
 ############################################
 
 FROM gcr.io/distroless/python3
-COPY --from=build /app /app
+COPY --from=build /app/ /app/
 EXPOSE 5000
 CMD  python ./main.py
 
