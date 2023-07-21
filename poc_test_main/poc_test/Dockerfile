@@ -3,12 +3,14 @@
 ###########################################
 # BASE IMAGE
 ###########################################
-FROM python:3.8-slim-buster as build
+FROM ubuntu as build
 
 WORKDIR /app
 
 COPY . /app
-RUN pip3 install -r requirements.txt
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip && \
+    pip install -r requirements.txt && \
 
 ############################################
 # HERE STARTS  MULTI STAGE BUILD
