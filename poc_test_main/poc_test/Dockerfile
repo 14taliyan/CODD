@@ -21,4 +21,16 @@ COPY --from=build /app/ /app/
 EXPOSE 5000
 CMD  python ./main.py
 
-## DockerFile
+## DockerFile single stage
+# FROM python:3-alpine3.15
+
+# WORKDIR /app
+
+# COPY . /app
+
+# RUN pip install -r requirements.txt
+
+
+
+# EXPOSE 5000
+# CMD  python ./main.py
